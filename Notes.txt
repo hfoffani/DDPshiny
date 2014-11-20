@@ -1,13 +1,19 @@
 
 To do:
+    a. git push -u origin master
+    b. units in plots
+    c. Text!
+    d. + deploy
+    e. calculation ui -> server -> ui
+        slider 1sigma 2sigma 3sigma.
+
 
 1. + git.
-    a. missing git push -u origin master
 2. design schema.
     + two panels.
     left: control
         + option box: plotN
-        scroll bar?
+        slider band. sigma
     right: plot
         country names 45º.
         missing values NA, remove warning.
