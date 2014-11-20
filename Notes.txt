@@ -1,6 +1,8 @@
 
 To do:
-1. git.
+
+1. + git.
+    a. missing git push -u origin master
 2. design schema.
     two panels.
     left: control
