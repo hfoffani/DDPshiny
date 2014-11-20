@@ -76,6 +76,6 @@ shinyServer(
                     },                    
                     )
         })
-        
+        output$stats <- renderText('some data')
     }
 )

@@ -1,7 +1,7 @@
 
 To do:
     a. + x axis 45º
-    b. units in plots
+    b. + units in plots
     c. Text!
     d. + deploy
     e. calculation ui -> server -> ui

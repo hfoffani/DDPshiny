@@ -10,7 +10,9 @@ shinyUI(pageWithSidebar(
         )
     ),
     mainPanel(
-        plotOutput('myChart')
+        p('Some text'),
+        plotOutput('myChart'),
+        textOutput('stats')
     )
 ))
 
