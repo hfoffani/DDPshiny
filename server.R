@@ -61,7 +61,7 @@ shinyServer(
                     },
                     'points' = {
                         y_lab <- "Psychiatric beds per 100K inhabitants."
-                        x_lab <- "Harm beds per 100K inhabitants."
+                        x_lab <- "Non-psyc beds in hospitals per 100K inhabitants."
                         ggplot(beds, aes(x=Hospital-Psychiatric,
                                          y=Psychiatric,
                                          label=Country)) +

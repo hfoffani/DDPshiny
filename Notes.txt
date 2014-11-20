@@ -7,9 +7,11 @@ To do:
         ii. beds what are they.
         iii. change 'Harm' to ????
         + iv. introduction
+    d. README.md
     e. + calculation ui -> server -> ui
     f. title of factor 'Relation' --> 'Percentages'
-    x. git push -u origin master
+    w. git push -u origin master
+    x. check github
     y. publish coursera.
     z. last deploy
 
