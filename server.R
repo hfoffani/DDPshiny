@@ -31,6 +31,7 @@ build_data <- function() {
     beds <- cbind(hosp28[,c('Country','2011')], psyc28[,'2011'])
     names(beds) <- cbind('Country','Hospital','Psychiatric')
     beds$Relation <- beds$Psychiatric / beds$Hospital * 100
+    beds <- beds[complete.cases(beds),]
     
     return (beds)
 }

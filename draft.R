@@ -27,6 +27,7 @@ psyc28$code <- NULL
 beds <- cbind(hosp28[,c('Country','2011')], psyc28[,'2011'])
 names(beds) <- cbind('Country','Hospital','Psychiatric')
 beds$Relation <- beds$Psychiatric / beds$Hospital
+beds <- beds[complete.cases(beds),]
 
 library(ggplot2)
 ggplot(beds, aes(x=Country, y=Relation)) + geom_bar(stat="identity")
