@@ -16,7 +16,8 @@ shinyUI(pageWithSidebar(
             'Even across European countries with similar development',
             'the amount of expenditure in this branch of public health',
             'varies a lot. Here is a comparison between psychiatric',
-            'beds and total hospital beds in different European countries.')),
+            'beds and total hospital beds in different European (EU28)',
+            'countries.')),
         plotOutput('myChart'),
         textOutput('stats')
     )

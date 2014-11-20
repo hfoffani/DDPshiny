@@ -3,7 +3,7 @@ To do:
     a. + x axis 45º
     b. + units in plots
     c. Text!
-        i. eurostat
+        i. eurostat / year / NAs
         ii. beds what are they.
         iii. change 'Harm' to ????
         + iv. introduction

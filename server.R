@@ -36,6 +36,11 @@ build_data <- function() {
     return (beds)
 }
 
+formatstat <- function(mu, sigma,dig) {
+    paste('Mean number of beds', format(mu,digits=dig),
+          '. Standard deviation', format(sigma,digits=dig))
+}
+
 beds <- build_data()
 
 shinyServer(
@@ -74,11 +79,21 @@ shinyServer(
                             theme(axis.text.x = element_text(angle = 45)) +
                             ylab(y_lab)
                     },                    
-                    )
+            )
         })
         output$stats <- renderText({
-            if (input$chart == 'rel') {'some data'}
-            else {'data some'}
+            switch (input$chart,
+                    'hosp'= {
+                        formatstat(mean(beds$Hospital), sd(beds$Hospital), 0)
+                    },
+                    'psyc'= {
+                        formatstat(mean(beds$Psychiatric), sd(beds$Psychiatric), 0)  
+                    },
+                    'rel'= {
+                        formatstat(mean(beds$Relation), sd(beds$Relation), 1)  
+                    },
+                    ''
+            )            
         })
     }
 )
