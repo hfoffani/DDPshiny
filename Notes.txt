@@ -1,11 +1,13 @@
 
 To do:
-    a. git push -u origin master
+    a. + x axis 45º
     b. units in plots
     c. Text!
     d. + deploy
     e. calculation ui -> server -> ui
-        slider 1sigma 2sigma 3sigma.
+        slider interval median & 1sigma 2sigma 3sigma.
+    x. git push -u origin master
+    y. publish coursera.
 
 
 1. + git.

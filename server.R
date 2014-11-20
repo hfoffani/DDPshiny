@@ -44,21 +44,26 @@ shinyServer(
             switch (input$chart,
                     'rel'= {
                         ggplot(beds, aes(x=Country, y=Relation)) +
-                            geom_bar(stat="identity")
+                            geom_bar(stat="identity") +
+                            theme(axis.text.x = element_text(angle = 45))
                     },
                     'points'={
-                        ggplot(beds, aes(x=Hospital-Psychiatric, y=Psychiatric, label=Country)) +
+                        ggplot(beds, aes(x=Hospital-Psychiatric,
+                                         y=Psychiatric,
+                                         label=Country)) +
                             geom_text(vjust=1) +
                             geom_point(aes(size=Relation))                        
                     },
                     'hosp'= {
                         ggplot(beds, aes(x=Country, y=Hospital)) +
-                            geom_bar(stat="identity")
+                            geom_bar(stat="identity") +
+                            theme(axis.text.x = element_text(angle = 45))
                     },
                     
                     'psyc'= {
                         ggplot(beds, aes(x=Country, y=Psychiatric)) +
-                            geom_bar(stat="identity")
+                            geom_bar(stat="identity") +
+                            theme(axis.text.x = element_text(angle = 45))
                     },                    
                     )
         })
