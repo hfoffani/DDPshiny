@@ -2,11 +2,12 @@ library(shiny)
 shinyUI(pageWithSidebar(
     headerPanel("DDP Project"),
     sidebarPanel(
-        radioButtons("chart", "Chart type:",
-                     c("Relation" = "rel",
-                       "Psyc vs. Hospital" = "points",
-                       "Psychiatric beds" = "psyc",
-                       "Hosptial beds" = "hosp"))
+        radioButtons("chart", "Plots:", c(
+                "Psychiatric beds per Country" = "psyc",
+                "Total Hospital beds per Country" = "hosp",
+                "Proportion of Psyc to Hospital beds per Country" = "rel",
+                "Psyc vs. Total Hospital beds" = "points")        
+        )
     ),
     mainPanel(
         plotOutput('myChart')

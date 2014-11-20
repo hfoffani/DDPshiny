@@ -49,7 +49,17 @@ shinyServer(
                         ggplot(beds, aes(x=Hospital-Psychiatric, y=Psychiatric, label=Country)) +
                             geom_text(vjust=1) +
                             geom_point(aes(size=Relation*100))                        
-                    })
+                    },
+                    'hosp'= {
+                        ggplot(beds, aes(x=Country, y=Hospital)) +
+                            geom_bar(stat="identity")
+                    },
+                    
+                    'psyc'= {
+                        ggplot(beds, aes(x=Country, y=Psychiatric)) +
+                            geom_bar(stat="identity")
+                    },                    
+                    )
         })
         
     }

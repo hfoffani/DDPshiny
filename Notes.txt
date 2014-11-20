@@ -4,11 +4,13 @@ To do:
 1. + git.
     a. missing git push -u origin master
 2. design schema.
-    two panels.
+    + two panels.
     left: control
-        option box: plotN
+        + option box: plotN
         scroll bar?
     right: plot
+        country names 45º.
+        missing values NA, remove warning.
         plot1. bar chart Hosp/country order by country
         plot2. bar chart Hosp/country order by number of beds.
         plot3. bar chart Psyc/ idem ^
