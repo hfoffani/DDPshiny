@@ -7,10 +7,7 @@ To do:
         ii. beds what are they.
         iii. change 'Harm' to ????
         + iv. introduction
-    e. calculation ui -> server -> ui
-        i. define output data
-        ii. add control
-        iii. output according input.
+    e. + calculation ui -> server -> ui
     f. title of factor 'Relation' --> 'Percentages'
     x. git push -u origin master
     y. publish coursera.
