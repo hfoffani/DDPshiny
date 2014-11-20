@@ -2,7 +2,11 @@ library(shiny)
 shinyUI(pageWithSidebar(
     headerPanel("DDP Project"),
     sidebarPanel(
-        sliderInput('mu', 'Guess at the mu',value = 70, min = 60, max = 80, step = 0.05,)
+        radioButtons("chart", "Chart type:",
+                     c("Relation" = "rel",
+                       "Psyc vs. Hospital" = "points",
+                       "Psychiatric beds" = "psyc",
+                       "Hosptial beds" = "hosp"))
     ),
     mainPanel(
         plotOutput('myChart')

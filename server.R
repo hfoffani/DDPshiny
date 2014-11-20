@@ -40,10 +40,16 @@ beds <- build_data()
 shinyServer(
     function(input, output) {
         output$myChart <- renderPlot({
-            
-            # ggplot(beds, aes(x=Country, y=Relation)) + geom_bar(stat="identity")
-            ggplot(beds, aes(x=Hospital-Psychiatric, y=Psychiatric, label=Country)) + geom_text(vjust=1) + geom_point(aes(size=Relation*100))
-            
+            switch (input$chart,
+                    'rel'= {
+                        ggplot(beds, aes(x=Country, y=Relation)) +
+                            geom_bar(stat="identity")
+                    },
+                    'points'={
+                        ggplot(beds, aes(x=Hospital-Psychiatric, y=Psychiatric, label=Country)) +
+                            geom_text(vjust=1) +
+                            geom_point(aes(size=Relation*100))                        
+                    })
         })
         
     }
