@@ -30,7 +30,7 @@ build_data <- function() {
     
     beds <- cbind(hosp28[,c('Country','2011')], psyc28[,'2011'])
     names(beds) <- cbind('Country','Hospital','Psychiatric')
-    beds$Relation <- beds$Psychiatric / beds$Hospital
+    beds$Relation <- beds$Psychiatric / beds$Hospital * 100
     
     return (beds)
 }
@@ -48,7 +48,7 @@ shinyServer(
                     'points'={
                         ggplot(beds, aes(x=Hospital-Psychiatric, y=Psychiatric, label=Country)) +
                             geom_text(vjust=1) +
-                            geom_point(aes(size=Relation*100))                        
+                            geom_point(aes(size=Relation))                        
                     },
                     'hosp'= {
                         ggplot(beds, aes(x=Country, y=Hospital)) +
