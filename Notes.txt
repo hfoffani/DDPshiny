@@ -10,7 +10,7 @@ To do:
     d. README.md
     e. + calculation ui -> server -> ui
     f. title of factor 'Relation' --> 'Percentages'
-    g. last text with other fonts and bottom
+    g. + last text with other fonts and bottom??
 
     w. git push -u origin master
     x. check github
