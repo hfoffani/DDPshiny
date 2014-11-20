@@ -49,7 +49,7 @@ shinyServer(
                             theme(axis.text.x = element_text(angle = 45)) +
                             ylab(y_lab)
                     },
-                    'points'={
+                    'points' = {
                         y_lab <- "Psychiatric beds per 100K inhabitants."
                         x_lab <- "Harm beds per 100K inhabitants."
                         ggplot(beds, aes(x=Hospital-Psychiatric,
