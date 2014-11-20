@@ -76,6 +76,9 @@ shinyServer(
                     },                    
                     )
         })
-        output$stats <- renderText('some data')
+        output$stats <- renderText({
+            if (input$chart == 'rel') {'some data'}
+            else {'data some'}
+        })
     }
 )
