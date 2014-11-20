@@ -36,9 +36,14 @@ build_data <- function() {
     return (beds)
 }
 
-formatstat <- function(mu, sigma,dig) {
-    paste('Mean number of beds', format(mu,digits=dig),
-          '. Standard deviation', format(sigma,digits=dig))
+formatstat <- function(mu, sigma, probs, qs) {
+    template <- paste(
+        'Mean number of beds: %.0f.',
+        'Standard deviation: %.0f.',
+        'Quantiles (%.0f%% - %.0f%%): [%.0f %.0f]'      
+        )
+    s <- sprintf(template, mu, sigma, probs[1], probs[2], qs[1], qs[2])
+    return (s)
 }
 
 beds <- build_data()
@@ -82,15 +87,24 @@ shinyServer(
             )
         })
         output$stats <- renderText({
-            switch (input$chart,
+            switch (input$chart,                    
                     'hosp'= {
-                        formatstat(mean(beds$Hospital), sd(beds$Hospital), 0)
+                        quantiles <- quantile(beds$Hospital, input$probs / 100)                                    
+                        formatstat(mean(beds$Hospital),
+                                   sd(beds$Hospital),
+                                   input$probs, quantiles)
                     },
                     'psyc'= {
-                        formatstat(mean(beds$Psychiatric), sd(beds$Psychiatric), 0)  
+                        quantiles <- quantile(beds$Psychiatric, input$probs / 100)            
+                        formatstat(mean(beds$Psychiatric),
+                                   sd(beds$Psychiatric),
+                                   input$probs, quantiles)  
                     },
                     'rel'= {
-                        formatstat(mean(beds$Relation), sd(beds$Relation), 1)  
+                        quantiles <- quantile(beds$Relation, input$probs / 100)            
+                        formatstat(mean(beds$Relation),
+                                   sd(beds$Relation),
+                                   input$probs, quantiles)  
                     },
                     ''
             )            

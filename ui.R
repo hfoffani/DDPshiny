@@ -2,12 +2,14 @@ library(shiny)
 shinyUI(pageWithSidebar(
     headerPanel('Psychiatric beds vs. Total Hospital beds'),
     sidebarPanel(
-        radioButtons("chart", "Plots:", c(
+        radioButtons("chart", label = h5("Plots"), c(
                 "Psychiatric beds per Country" = "psyc",
                 "Total Hospital beds per Country" = "hosp",
                 "Percentage of Psyc to Hospital beds per Country" = "rel",
                 "Psychiatric beds vs. Harm beds" = "points")        
-        )
+        ),
+        sliderInput("probs", label = h5("Quantiles"), min = 0, 
+                    max = 100, value = c(25, 75))
     ),
     mainPanel(
         p(paste(
