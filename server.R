@@ -43,27 +43,36 @@ shinyServer(
         output$myChart <- renderPlot({
             switch (input$chart,
                     'rel'= {
+                        y_lab <- "Percentage of Psychiatric beds over Total"
                         ggplot(beds, aes(x=Country, y=Relation)) +
                             geom_bar(stat="identity") +
-                            theme(axis.text.x = element_text(angle = 45))
+                            theme(axis.text.x = element_text(angle = 45)) +
+                            ylab(y_lab)
                     },
                     'points'={
+                        y_lab <- "Psychiatric beds per 100K inhabitants."
+                        x_lab <- "Harm beds per 100K inhabitants."
                         ggplot(beds, aes(x=Hospital-Psychiatric,
                                          y=Psychiatric,
                                          label=Country)) +
                             geom_text(vjust=1) +
-                            geom_point(aes(size=Relation))                        
+                            geom_point(aes(size=Relation)) +
+                            ylab(y_lab) +
+                            xlab(x_lab)
                     },
                     'hosp'= {
+                        y_lab <- "Total Hospital beds per 100K inhabitants."
                         ggplot(beds, aes(x=Country, y=Hospital)) +
                             geom_bar(stat="identity") +
-                            theme(axis.text.x = element_text(angle = 45))
+                            theme(axis.text.x = element_text(angle = 45)) +
+                            ylab(y_lab)
                     },
-                    
                     'psyc'= {
+                        y_lab <- "Psychiatric beds per 100K inhabitants."
                         ggplot(beds, aes(x=Country, y=Psychiatric)) +
                             geom_bar(stat="identity") +
-                            theme(axis.text.x = element_text(angle = 45))
+                            theme(axis.text.x = element_text(angle = 45)) +
+                            ylab(y_lab)
                     },                    
                     )
         })
