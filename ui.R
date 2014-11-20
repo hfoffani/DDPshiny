@@ -1,6 +1,8 @@
 library(shiny)
-shinyUI(pageWithSidebar(
-    headerPanel('Psychiatric beds in European Hospitals'),
+shinyUI(fluidPage(
+    titlePanel('Psychiatric beds in European Hospitals'),
+    sidebarLayout( #position = "right",
+
     sidebarPanel(
         radioButtons("chart", label = h5("Plots"), c(
                 "Psychiatric beds per Country" = "psyc",
@@ -25,14 +27,15 @@ shinyUI(pageWithSidebar(
         plotOutput('myChart'),
         textOutput('stats'),
         p(),
-        p('Data from Eurostats reproduced without permission.'),
-        p('Data Sources:',
-          a('Hospital beds',
+        div(
+            'Data from Eurostats reproduced without permission.', br(),
+            'Data Sources:', a('Hospital beds',
             href='http://ec.europa.eu/eurostat/product?code=tps00046'),
-          'and',
-          a('Psychiatric care beds in hospitals',
-            href='http://ec.europa.eu/eurostat/product?code=tps00047')),        
-        p('Missing 2011 data from Netherlands, Greece, Denmark & Luxembourg')
+            'and', a('Psychiatric care beds in hospitals',
+            href='http://ec.europa.eu/eurostat/product?code=tps00047'), br(),
+            'Missing 2011 data from Netherlands, Greece, Denmark & Luxembourg',
+            style='font-size:80%')
+    )
     )
 ))
 
