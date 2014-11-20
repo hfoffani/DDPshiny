@@ -3,11 +3,18 @@ To do:
     a. + x axis 45º
     b. + units in plots
     c. Text!
-    d. + deploy
+        i. eurostat
+        ii. beds what are they.
+        iii. change 'Harm' to ????
+        + iv. introduction
     e. calculation ui -> server -> ui
-        slider interval median & 1sigma 2sigma 3sigma.
+        i. define output data
+        ii. add control
+        iii. output according input.
+    f. title of factor 'Relation' --> 'Percentages'
     x. git push -u origin master
     y. publish coursera.
+    z. last deploy
 
 
 1. + git.
