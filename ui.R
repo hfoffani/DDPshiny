@@ -32,7 +32,7 @@ shinyUI(fluidPage(
         textOutput('stats'),
         p(),
         div(
-            'Data from Eurostats reproduced without permission.', br(),
+            'Data from Eurostat reproduced without permission.', br(),
             'Data Sources:', a('Hospital beds',
             href='http://ec.europa.eu/eurostat/product?code=tps00046'),
             'and', a('Psychiatric care beds in hospitals',
