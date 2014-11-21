@@ -7,10 +7,10 @@ shinyUI(fluidPage(
 
     sidebarPanel(
         radioButtons("chart", label = h5("Plots"), c(
-                "Psychiatric beds per Country" = "psyc",
                 "Total Hospital beds per Country" = "hosp",
+                "Psychiatric beds per Country" = "psyc",
                 "Percentage of Psyc to Hospital beds per Country" = "rel",
-                "Psychiatric beds vs. Harm beds" = "points")        
+                "Psychiatric beds vs. Non-psyc beds" = "points")        
         ),
         sliderInput("probs", label = h5("Quantiles"), min = 0, 
                     max = 100, value = c(25, 75))
