@@ -1,4 +1,6 @@
 library(shiny)
+library(markdown)
+
 shinyUI(fluidPage(
     titlePanel('Psychiatric beds in European Hospitals'),
     sidebarLayout( #position = "right",
