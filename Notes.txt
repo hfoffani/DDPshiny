@@ -7,7 +7,7 @@ To do:
         + ii. beds what are they.
         + iii. change 'Harm' to ????
         + iv. introduction
-    d. README.md
+    d. + README.md
     e. + calculation ui -> server -> ui
     f. title of factor 'Relation' --> 'Percentages'
     g. + last text with other fonts and bottom??
