@@ -14,6 +14,8 @@ shinyUI(fluidPage(
                     max = 100, value = c(25, 75))
     ),
     mainPanel(
+    tabsetPanel(
+    tabPanel("Home",
         p(paste(
             'According to WHO because of social stigma, mental disorders',
             'are usually the ones that receive less public attention.',
@@ -35,7 +37,10 @@ shinyUI(fluidPage(
             href='http://ec.europa.eu/eurostat/product?code=tps00047'), br(),
             'Missing 2011 data from Netherlands, Greece, Denmark & Luxembourg',
             style='font-size:80%')
+    ),
+    tabPanel("About",
+             includeMarkdown("README.md"))
     )
     )
-))
+)))
 

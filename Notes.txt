@@ -11,11 +11,13 @@ To do:
     e. + calculation ui -> server -> ui
     f. title of factor 'Relation' --> 'Percentages'
     g. + last text with other fonts and bottom??
+    h. ADD DOCUMENTATION!!!!!
 
     w. git push -u origin master
     x. check github
     y. publish coursera.
     z. last deploy
+
 
 
 1. + git.
