@@ -66,8 +66,9 @@ shinyServer(
                         ggplot(beds, aes(x=Hospital-Psychiatric,
                                          y=Psychiatric,
                                          label=Country)) +
+                            geom_point(aes(size=Relation, colour=Country)) +
+                            guides(colour=guide_legend(ncol=2)) +
                             geom_text(vjust=1) +
-                            geom_point(aes(size=Relation)) +
                             scale_size("Psyc relative\nto Total beds\nin percent") +
                             ylab(y_lab) +
                             xlab(x_lab)
