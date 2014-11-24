@@ -55,8 +55,9 @@ shinyServer(
                     'rel'= {
                         y_lab <- "Percentage of Psychiatric beds over Total"
                         ggplot(beds, aes(x=Country, y=Relation)) +
-                            geom_bar(stat="identity") +
+                            geom_bar(stat="identity", aes(fill=Country)) +
                             theme(axis.text.x = element_text(angle = 45)) +
+                            guides(fill=guide_legend(ncol=2)) +
                             ylab(y_lab)
                     },
                     'points' = {
@@ -74,15 +75,17 @@ shinyServer(
                     'hosp'= {
                         y_lab <- "Total Hospital beds per 100K inhabitants."
                         ggplot(beds, aes(x=Country, y=Hospital)) +
-                            geom_bar(stat="identity") +
+                            geom_bar(stat="identity", aes(fill=Country)) +
                             theme(axis.text.x = element_text(angle = 45)) +
+                            guides(fill=guide_legend(ncol=2)) +
                             ylab(y_lab)
                     },
                     'psyc'= {
                         y_lab <- "Psychiatric beds per 100K inhabitants."
                         ggplot(beds, aes(x=Country, y=Psychiatric)) +
-                            geom_bar(stat="identity") +
+                            geom_bar(stat="identity", aes(fill=Country)) +
                             theme(axis.text.x = element_text(angle = 45)) +
+                            guides(fill=guide_legend(ncol=2)) +
                             ylab(y_lab)
                     },                    
             )
